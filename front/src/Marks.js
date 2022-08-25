@@ -1,6 +1,6 @@
-import { geoNaturalEarth1, geoPath, geoGraticule, geoEqualEarth } from "d3";
+import { geoNaturalEarth1, geoPath, geoGraticule} from "d3";
 
-const projection = geoEqualEarth();
+const projection = geoNaturalEarth1();
 const path = geoPath(projection);
 
 export const Marks = ({ data }) => (
