@@ -1,3 +1,15 @@
 .App {
   text-align: center;
+  margin: 10px;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: antiquewhite;
+}
+
+pre {
+  font-size: 7em;
 }
