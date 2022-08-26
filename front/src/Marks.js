@@ -8,7 +8,7 @@ export const Marks = ({ data: { countries, interiors } }) => (
   <g className="marks">
     {countries.features.map((feature) => {
         if(feature.properties.name !== "Antarctica")
-            return <path className="feature"  d={path(feature)}></path>;
+            return <path className="feature" d={path(feature)}></path>;
         return <path></path>
 
     })}
