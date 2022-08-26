@@ -1,0 +1,9 @@
+path{
+    fill:#9ACD32;
+    stroke-width: 0px;
+}
+
+path:hover{
+    stroke-width: 1px;
+    stroke: lightgray;
+}
