@@ -1,0 +1,41 @@
+.navbar {
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(73, 73, 73);
+    top: 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+
+
+@media (min-width: 768px) {
+    .app-title {
+        margin-left: -15px;
+    }
+}
+
+.app-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    float: left;
+    padding: 16px 15px;
+    font-size: 17px;
+    line-height: 18px;
+    height: 50px;
+
+}
+
+@media (max-width: 767px) {
+    .app-title {
+        left: 40px;
+        top: -1px;
+    }
+}

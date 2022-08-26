@@ -7,11 +7,14 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
-  background-color: rgb(68, 68, 68);
+  background-color: rgb(32, 32, 32);
+  font-family: "Graphik LC Web" ,Arial, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 pre {
-  font-size: 6em;
+  font-size: 4em;
   text-align: center;
 }
 
@@ -47,8 +50,6 @@ pre {
   pointer-events: none;
   width: 100%;
   max-width: 650px;
-
-  top: 50px;
   transition: opacity .6s ease, top .6s ease;
 }
 

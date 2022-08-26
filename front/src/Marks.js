@@ -1,4 +1,4 @@
-import { geoNaturalEarth1, geoPath, geoGraticule } from "d3";
+import { geoNaturalEarth1, geoPath } from "d3";
 import "./Marks.css";
 
 const projection = geoNaturalEarth1();
