@@ -10,7 +10,7 @@
     z-index: 1030;
     min-height: 50px;
     margin-bottom: 20px;
-    border: 1px solid transparent;
+    border: none;
 }
 
 
@@ -37,5 +37,47 @@
     .app-title {
         left: 40px;
         top: -1px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.about_btn {
+    color: #ecf0f1;
+    transition: all .2s ease-in-out;
+    line-height: 20px;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.navbar li {
+    top: 0;
+    position: relative;
+    display: block;
+}
+
+.about:hover {
+    background-color: gray;
+}
+
+
+@media (min-width: 861px) {
+    .navbar_ul {
+        float: right!important;
+        margin: 0;
+    }
+    .navbar_ul:last-child{
+        margin-right: -15px;
+    }
+    .about_btn {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .navbar li {
+        float: left;
     }
 }
