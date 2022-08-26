@@ -7,11 +7,11 @@ const path = geoPath(projection);
 export const Marks = ({ data: { countries, interiors } }) => (
   <g className="marks">
     {countries.features.map((feature) => {
-      if (feature.properties.name === "France") {
-        console.log(feature.properties.name);
-      }
-      return <path className="feature" d={path(feature)}></path>;
+        if(feature.properties.name !== "Antarctica")
+            return <path className="feature"  d={path(feature)}></path>;
+        return <path></path>
+
     })}
-    {/*return <path d={path(interiors)}></path>;*/}
+    {/*return <path className="interior" d={path(interiors)}></path>;*/}
   </g>
 );
