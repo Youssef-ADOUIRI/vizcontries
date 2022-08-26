@@ -1,13 +1,17 @@
-import { geoNaturalEarth1, geoPath, geoGraticule} from "d3";
+import { geoNaturalEarth1, geoPath, geoGraticule } from "d3";
+import "./Marks.css";
 
 const projection = geoNaturalEarth1();
 const path = geoPath(projection);
 
-export const Marks = ({ data }) => (
+export const Marks = ({ data: { countries, interiors } }) => (
   <g className="marks">
-    {data.features.map((feature) => {
-      console.log(feature);
-      return <path d={path(feature)}></path>;
+    {countries.features.map((feature) => {
+      if (feature.properties.name === "France") {
+        console.log(feature.properties.name);
+      }
+      return <path className="feature" d={path(feature)}></path>;
     })}
+    {/*return <path d={path(interiors)}></path>;*/}
   </g>
 );

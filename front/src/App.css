@@ -7,9 +7,10 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
-  background-color: antiquewhite;
+  background-color: rgb(68, 68, 68);
 }
 
 pre {
   font-size: 7em;
 }
+
