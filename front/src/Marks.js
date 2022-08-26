@@ -7,10 +7,9 @@ const path = geoPath(projection);
 export const Marks = ({ data: { countries, interiors } }) => (
   <g className="marks">
     {countries.features.map((feature) => {
-        if(feature.properties.name !== "Antarctica")
-            return <path className="feature" d={path(feature)}></path>;
-        return <path></path>
-
+      if (feature.properties.name !== "Antarctica")
+        return <path className="feature" d={path(feature)}></path>;
+      return <path></path>;
     })}
     {/*return <path className="interior" d={path(interiors)}></path>;*/}
   </g>
