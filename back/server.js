@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const PORT = 4200;
+const PORT = 8181;
 const cors = require('cors');
 const config = require('./database/DB');
 
