@@ -2,13 +2,13 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import cors from 'cors';
-import {DB} from './database/DB.js';
+import exports from './database/DB.js';
 import getCountryPopulation from './utils/worldbankAPI.js';
 
 const app = express();
 const PORT = 8181;
 
-mongoose.connect(DB).then(
+mongoose.connect(exports.DB).then(
   () => {
     console.log("Database is connected");
   },
