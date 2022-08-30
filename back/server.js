@@ -1,9 +1,9 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import bodyParser from 'body-parser'
-import cors from 'cors';
-import exports from './database/DB.js';
-import getCountryPopulation from './utils/worldbankAPI.js';
+import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
+import cors from "cors";
+import exports from "./database/DB.js";
+import getCountryPopulation from "./utils/worldbankAPI.js";
 
 const app = express();
 const PORT = 8181;
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   console.log("You have reached this API");
-  res_json = getCountryPopulation('bra');
+  res_json = getCountryPopulation("bra");
   res.send(res_json);
 });
 

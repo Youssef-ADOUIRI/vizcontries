@@ -1,6 +1,6 @@
 /** A script to get data from the WorldBank API */
 
-import axios from 'axios'
+import axios from "axios";
 
 /** 
 app.get("/", async (req, res) => {
@@ -32,6 +32,6 @@ const getCountryPopulation = (countryID) => {
       return_value = res[1];
     })
     .catch((e) => console.error("error: " + e));
-}
+};
 
 export default getCountryPopulation;
