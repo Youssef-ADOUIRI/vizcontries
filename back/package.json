@@ -10,6 +10,7 @@
   },
   "author": "NoctisEd",
   "license": "ISC",
+  "type":"module",
   "dependencies": {
     "axios": "^0.27.2",
     "body-parser": "^1.20.0",
