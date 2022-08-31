@@ -15,18 +15,15 @@ app.get("/", async (req, res) => {
     response = await response.json();
     res.status(200).json(response);
   } catch (err) {
-    console.log(err);
+    console.log(erro);
     res.status(500).json({ msg: `Internal Server Error.` });
   }
   return res.send("Received a GET HTTP method");
 });
 */
 
-export const getCountryPopulation = async (countryID) => {
-  let return_value;
-  const url = `https://api.worldbank.org/v2/en/country/${countryID}/indicator/SP.POP.TOTL?format=json`;
+export const getCountryInd = async (countryID , indicator) => {
+  const url = `https://api.worldbank.org/v2/en/country/${countryID}/indicator/${indicator}?format=json`;
   let result = await axios.get(url).catch((e) => console.error("error: " + e));
-  return await result.data;
+  return await result;
 };
-
-

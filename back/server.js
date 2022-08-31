@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
 import DB from "./database/DB.js";
-import{ getAllCountries }from "./utils/orgnize_req.js";
+import {  populationPerCountry } from "./utils/orgnize_req.js";
 
 const app = express();
 const PORT = 5000;
@@ -23,9 +23,9 @@ app.use(bodyParser.json());
 
 app.get("/refreach", async(req, res) => {
   console.log("You have reached this API with" + req);
-  const cc = await getAllCountries()
-  res.send( cc )
-  console.log( cc )
+  await populationPerCountry();
+  res.send('cc');
+
 });
 
 app.listen(PORT, function () {
