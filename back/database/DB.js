@@ -1,3 +1,3 @@
-export default exports = {
-  DB: "mongodb://localhost:27017/reactexpress",
-};
+const DB =  "mongodb://localhost:27017/reactexpress";
+
+export default  DB;

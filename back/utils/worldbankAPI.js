@@ -22,16 +22,11 @@ app.get("/", async (req, res) => {
 });
 */
 
-const getCountryPopulation = (countryID) => {
+const getCountryPopulation = async (countryID) => {
   let return_value;
-  url = `https://api.worldbank.org/v2/en/country/${countryID}/indicator/SP.POP.TOTL?format=json`;
-  axios
-    .get(url)
-    .then((res) => {
-      console.log(res[1]);
-      return_value = res[1];
-    })
-    .catch((e) => console.error("error: " + e));
+  const url = `https://api.worldbank.org/v2/en/country/${countryID}/indicator/SP.POP.TOTL?format=json`;
+  let result = await axios.get(url).catch((e) => console.error("error: " + e));
+  return await result.data;
 };
 
 export default getCountryPopulation;
