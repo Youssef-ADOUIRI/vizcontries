@@ -42,6 +42,7 @@ export const populationPerCountry = async () => {
         population: val_pp,
         gdp: val_gdp,
       };
+      
       console.log(countryData);
     } catch (error) {
         console.error(error);
