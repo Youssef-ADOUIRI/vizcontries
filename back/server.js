@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
 import DB from "./database/DB.js";
-import getCountryPopulation from "./utils/worldbankAPI.js";
+import{ getAllCountries }from "./utils/orgnize_req.js";
 
 const app = express();
 const PORT = 5000;
@@ -21,11 +21,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/", async (req, res) => {
-  console.log("You have reached this API");
-  const res_json = await getCountryPopulation("bra");
-  console.log(res_json)
-  res.send(res_json);
+app.get("/refreach", async(req, res) => {
+  console.log("You have reached this API with" + req);
+  const cc = await getAllCountries()
+  res.send( cc )
+  console.log( cc )
 });
 
 app.listen(PORT, function () {

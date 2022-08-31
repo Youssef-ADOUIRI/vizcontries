@@ -22,11 +22,11 @@ app.get("/", async (req, res) => {
 });
 */
 
-const getCountryPopulation = async (countryID) => {
+export const getCountryPopulation = async (countryID) => {
   let return_value;
   const url = `https://api.worldbank.org/v2/en/country/${countryID}/indicator/SP.POP.TOTL?format=json`;
   let result = await axios.get(url).catch((e) => console.error("error: " + e));
   return await result.data;
 };
 
-export default getCountryPopulation;
+
