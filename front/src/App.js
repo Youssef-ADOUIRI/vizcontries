@@ -2,12 +2,30 @@ import "./App.css";
 import { WorldMap } from "./WorldMap";
 import { Marks } from "./Marks";
 import Nav from "./Nav";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const width = 960;
 const height = 500;
 
 function App() {
   const data = WorldMap();
+
+  //fetch data from the express backend server with api
+  const [coutries, setCountries] = useState([]);
+  const API_ENDPOINT = "http://localhost:5000/api/countries";
+
+  useEffect(() => {
+    const asyncFunc = async () => {
+      const response = await axios.get(API_ENDPOINT).catch((err) => {
+        console.log("api error : " + err);
+      });
+      setCountries(response.data);
+      console.log(response.data);
+    };
+    asyncFunc();
+  }, []);
+
   //dynamic template
   let data_explore_categorie = "population";
 
@@ -16,7 +34,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Nav/>
+      <Nav />
       <div id="top-overlay">
         <div class="background"></div>
         <h2 id="scope" className="visible">
@@ -33,6 +51,11 @@ function App() {
         <svg width={width} height={height}>
           <Marks data={data} />
         </svg>
+      </div>
+      <div className="test_api">
+        {coutries.map(function (country) {
+          return <p>{country.Name}</p>;
+        })}
       </div>
     </div>
   );

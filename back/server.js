@@ -12,18 +12,12 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/refreach", async (req, res) => {
+app.get("/api/countries", async (req, res) => {
   console.log("You have reached this API with " + req.query);
 
   //const obj = addtodb({ Id: "ggd", Name: "gorlj", Available: true , GDP : 12});
-  // Countries.find({}, (err, found) => {
-  //   if (!err) {
-  //     res.send(found);
-  //   }
-  //   console.log(err);
-  //   res.send("Some error occured!");
-  // }).catch((err) => console.log("Error occured, " + err));
-
+  const countries_array = await Countries.find().catch((err) => console.log("Error occured, " + err));
+  res.json(countries_array)
 });
 
 app.listen(PORT, function () {
