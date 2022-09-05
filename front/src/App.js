@@ -1,6 +1,6 @@
 import "./App.css";
 import { WorldMap } from "./WorldMap";
-import { Marks } from "./Marks";
+import  Marks  from "./Marks";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -51,11 +51,6 @@ function App() {
         <svg width={width} height={height}>
           <Marks data={data} />
         </svg>
-      </div>
-      <div className="test_api">
-        {coutries.map(function (country) {
-          return <p>{country.Name}</p>;
-        })}
       </div>
     </div>
   );
