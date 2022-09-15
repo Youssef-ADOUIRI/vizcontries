@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const countrySlice = createSlice({
-  name: "hover",
+  name: "country",
   initialState: {
     value: 0,
   },

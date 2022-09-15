@@ -1,21 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+export default hoverReducer = (state = 0, action) => {
+  if (state.type == "isHovering") {
+    return 1;
+  } else {
+    return 0;
+  }
+};
 
-export const hoverSlice = createSlice({
-  name: "hover",
-  initialState: {
-    value: 0,
-  },
-  reducers: {
-    increment: (state) => {
-      state.value = 1;
-    },
-    decrement: (state) => {
-      state.value = 0;
-    },
-  },
-});
-
-// Action creators are generated for each case reducer function
-export const { increment, decrement } = hoverSlice.actions;
-
-export default hoverSlice.reducer;
+export const isHovering = () => {
+  return { type: "isHovering" };
+};
+export const isntHovering = () => {
+  return { type: "isntHovering" };
+};

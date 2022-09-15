@@ -1,8 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { createstore , combineReducers } from "redux";
 import hoverReducer from './hoverReducer.js'
 
-export default configureStore({
-  reducer: {
-    isHover: hoverReducer,
-  },
-});
+export default createstore(hoverReducer);
