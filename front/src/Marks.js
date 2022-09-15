@@ -2,7 +2,7 @@ import { geoNaturalEarth1, geoPath } from "d3";
 import "./Marks.css";
 import { useState } from "react";
 import ReactTooltip from "react-tooltip";
-import { increment, decrement } from "./redux/reducer";
+import { increment, decrement } from "./redux/hoverReducer";
 import { useDispatch } from "react-redux";
 
 

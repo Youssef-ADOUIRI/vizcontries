@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from './reducer.js'
+import hoverReducer from './hoverReducer.js'
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    isHover: hoverReducer,
   },
 });
