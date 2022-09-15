@@ -1,4 +1,4 @@
-export default hoverReducer = (state = 0, action) => {
+const hoverReducer = (state = 0, action) => {
   if (state.type == "isHovering") {
     return 1;
   } else {
@@ -6,9 +6,11 @@ export default hoverReducer = (state = 0, action) => {
   }
 };
 
-export const isHovering = () => {
-  return { type: "isHovering" };
+export const isHovering = (data) => {
+  return { type: "isHovering", payload: data };
 };
 export const isntHovering = () => {
-  return { type: "isntHovering" };
+  return { type: "isntHovering", payload: "" };
 };
+
+export default hoverReducer;

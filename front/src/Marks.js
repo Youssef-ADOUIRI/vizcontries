@@ -1,7 +1,7 @@
 import { geoNaturalEarth1, geoPath } from "d3";
 import "./Marks.css";
 import { useState } from "react";
-import { increment, decrement } from "./redux/hoverReducer";
+import { isHovering, isntHovering } from "./redux/hoverReducer";
 import { useDispatch } from "react-redux";
 
 
@@ -20,8 +20,8 @@ const Marks = ({ data: { countries, interiors } }) => {
             <path
               className="feature"
               d={path(feature)}
-              onMouseEnter={() => dispatch(increment())}
-              onMouseLeave={() => dispatch(decrement())}
+              onMouseEnter={() => dispatch(isHovering(''))}
+              onMouseLeave={() => dispatch(isntHovering())}
             ></path>
           );
         return <path></path>;

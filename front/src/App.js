@@ -12,7 +12,7 @@ const height = 500;
 
 function App() {
   const data = WorldMap();
-  const count = useSelector((state) => state.isHover.value)
+  const count = useSelector((state) => state.hoverReducer)
 
   //fetch data from the express backend server with api
   const [coutries, setCountries] = useState([]);
