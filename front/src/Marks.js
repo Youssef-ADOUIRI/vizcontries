@@ -4,13 +4,12 @@ import { useState } from "react";
 import { isHovering, isntHovering } from "./redux/hoverReducer";
 import { useDispatch } from "react-redux";
 
-
 const projection = geoNaturalEarth1();
 const path = geoPath(projection);
 
 const Marks = ({ data: { countries, interiors } }) => {
   const [isShown, setIsShown] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <g className="marks">
@@ -20,7 +19,7 @@ const Marks = ({ data: { countries, interiors } }) => {
             <path
               className="feature"
               d={path(feature)}
-              onMouseEnter={() => dispatch(isHovering(''))}
+              onMouseEnter={() => dispatch(isHovering())}
               onMouseLeave={() => dispatch(isntHovering())}
             ></path>
           );
