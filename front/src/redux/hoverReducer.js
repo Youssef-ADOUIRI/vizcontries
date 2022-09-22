@@ -1,5 +1,5 @@
-const hoverReducer = (state = 0, action) => {
-  if (state.type == "isHovering") {
+const hoverReducer = (state, action) => {
+  if (action.type == "isHovering") {
     return 1;
   } else {
     return 0;
