@@ -4,15 +4,15 @@ import Marks from "./Marks";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import Fiche from "./components/Fiche";
 
 const width = 960;
 const height = 500;
 
 function App() {
   const data = WorldMap();
-  const selection = useSelector((state) => state.hoverReducer);
 
+  const [isShown, setIsShown] = useState(false);
   //fetch data from the express backend server with api
   const [coutries, setCountries] = useState([]);
   const API_ENDPOINT = "http://localhost:5000/api/countries";
@@ -38,7 +38,7 @@ function App() {
     <div className="App">
       <Nav />
       <div id="top-overlay">
-        <div class="background"></div>
+        <div className="background"></div>
         <h2 id="scope" className="visible">
           This map explores {"World Data"}: it visualizes the{" "}
           {data_explore_categorie} data of diffrent countries.
@@ -50,14 +50,17 @@ function App() {
         </h2>
       </div>
       <div className="mapContainer">
-        <svg width={width} height={height}>
+        <svg
+          width={width}
+          height={height}
+          onClick={() => {
+            setIsShown(true);
+          }}
+        >
           <Marks data={data} />
         </svg>
       </div>
-      <div>
-        <div>{selection.isHovering ? selection.country : 0}</div>
-        <div>end</div>
-      </div>
+      <div>{isShown && <Fiche />}</div>
     </div>
   );
 }
