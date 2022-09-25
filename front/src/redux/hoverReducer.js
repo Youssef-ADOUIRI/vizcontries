@@ -1,8 +1,8 @@
 const hoverReducer = (state, action) => {
-  if (action.type == "isHovering") {
-    return 1;
+  if (action.type === "isHovering") {
+    return { isHovering: true, country: action.payload };
   } else {
-    return 0;
+    return { isHovering: false, country: "" };
   }
 };
 

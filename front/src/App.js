@@ -1,18 +1,17 @@
 import "./App.css";
 import { WorldMap } from "./WorldMap";
-import  Marks  from "./Marks";
+import Marks from "./Marks";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-
 
 const width = 960;
 const height = 500;
 
 function App() {
   const data = WorldMap();
-  const count = useSelector((state) => state.hoverReducer)
+  const selection = useSelector((state) => state.hoverReducer);
 
   //fetch data from the express backend server with api
   const [coutries, setCountries] = useState([]);
@@ -56,7 +55,8 @@ function App() {
         </svg>
       </div>
       <div>
-        {count}
+        <div>{selection.isHovering ? selection.country : 0}</div>
+        <div>end</div>
       </div>
     </div>
   );

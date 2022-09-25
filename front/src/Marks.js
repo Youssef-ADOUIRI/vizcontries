@@ -1,6 +1,5 @@
 import { geoNaturalEarth1, geoPath } from "d3";
 import "./Marks.css";
-import { useState } from "react";
 import { isHovering, isntHovering } from "./redux/hoverReducer";
 import { useDispatch } from "react-redux";
 
@@ -8,7 +7,6 @@ const projection = geoNaturalEarth1();
 const path = geoPath(projection);
 
 const Marks = ({ data: { countries, interiors } }) => {
-  const [isShown, setIsShown] = useState(false);
   const dispatch = useDispatch();
 
   return (
@@ -17,9 +15,12 @@ const Marks = ({ data: { countries, interiors } }) => {
         if (feature.properties.name !== "Antarctica")
           return (
             <path
-              className="feature"
+              key={feature.properties.name}
+              className="feature_Path"
               d={path(feature)}
-              onMouseEnter={() => dispatch(isHovering())}
+              onMouseEnter={() => {
+                dispatch(isHovering(feature.properties.name));
+              }}
               onMouseLeave={() => dispatch(isntHovering())}
             ></path>
           );

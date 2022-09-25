@@ -1,9 +1,9 @@
-.feature{
+.feature_Path{
     fill:#9ACD32;
     stroke-width: 0px;
 }
 
-.feature:hover{
+.feature_Path:hover{
     stroke-width: 1px;
     stroke: lightgray;
 }
