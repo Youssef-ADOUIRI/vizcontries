@@ -5,6 +5,8 @@ import Nav from "./Nav";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Fiche from "./components/Fiche";
+import ReactTooltip from "react-tooltip";
+import { useSelector } from "react-redux";
 
 const width = 960;
 const height = 500;
@@ -13,6 +15,7 @@ function App() {
   const data = WorldMap();
 
   const [isShown, setIsShown] = useState(false);
+  const selection = useSelector((state) => state.hoverReducer);
   //fetch data from the express backend server with api
   const [coutries, setCountries] = useState([]);
   const API_ENDPOINT = "http://localhost:5000/api/countries";
@@ -56,11 +59,12 @@ function App() {
           onClick={() => {
             setIsShown(true);
           }}
+          data-tip={selection.country}
         >
           <Marks data={data} />
         </svg>
+        {selection.isHovering && <ReactTooltip place="top" type="dark" effect="float" delayHide={1000} />}
       </div>
-      <div>{isShown && <Fiche />}</div>
     </div>
   );
 }

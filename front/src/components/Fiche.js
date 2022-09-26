@@ -1,12 +1,14 @@
 import React from "react";
 import "./Fiche.css";
-import { useSelector } from "react-redux";
+
+import ReactTooltip from "react-tooltip";
 
 function Fiche() {
-  const selection = useSelector((state) => state.hoverReducer);
+  
+
   return (
     <div className="fiche">
-      <div>{selection.isHovering ? selection.country : 0}</div>
+
     </div>
   );
 }

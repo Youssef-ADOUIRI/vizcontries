@@ -1,7 +1,4 @@
-.fiche{
-    height: 200px;
-    width: 200px;
-    background-color: rgb(0, 0, 0);
-    position: absolute;
-    margin: auto;
-}
+ .fiche {
+     position: absolute;
+
+ }
